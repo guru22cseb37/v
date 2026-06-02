@@ -50,7 +50,7 @@ export interface Restaurant {
   category: "kerala" | "seafood" | "vegetarian" | "cafe" | "finedining" | "streetfood" | "budget";
   description: string;
   image: string;
-  priceRange: "100-300" | "300-700" | "700-1500" | "1500+";
+  priceRange: string;
   rating: number;
   reviews: number;
   popularDishes: string[];
