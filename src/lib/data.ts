@@ -64,7 +64,7 @@ export interface Restaurant {
 export interface ShoppingSpot {
   id: string;
   name: string;
-  category: "souvenirs" | "handmade" | "crafts" | "clothing" | "beachwear" | "jewelry" | "ayurveda";
+  category: "souvenirs" | "handmade" | "crafts" | "clothing" | "beachwear" | "jewelry" | "ayurveda" | "antiques" | "spices";
   description: string;
   image: string;
   priceRange: string;
@@ -702,19 +702,8 @@ export const restaurants: Restaurant[] = [
 // === SHOPPING ===
 export const shoppingSpots: ShoppingSpot[] = [
   {
-    id: "cliff-market",
-    name: "Cliff Market – Souvenir Lane",
-    category: "souvenirs",
-    description: "The main souvenir strip along the clifftop promenade.",
-    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80",
-    priceRange: "₹100 – ₹2,000",
-    location: { lat: 8.7370, lng: 76.7150 },
-    address: "North Cliff, Varkala",
-    tags: ["Souvenirs", "Clothing", "Magnets", "T-Shirts"],
-  },
-  {
     id: "anjuna-boutique",
-    name: "Kerala Handlooms & Crafts",
+    name: "Anjuna Boutique - Kerala Handlooms",
     category: "handmade",
     description: "Authentic Kerala handloom sarees, kasavu fabrics, and traditional crafts.",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
@@ -724,10 +713,21 @@ export const shoppingSpots: ShoppingSpot[] = [
     tags: ["Handloom", "Saree", "Kasavu", "Traditional"],
   },
   {
+    id: "ayurveda-herbal",
+    name: "Ayur-Veda Herbal Shop",
+    category: "ayurveda",
+    description: "Pure Ayurvedic medicines, herbal teas, massage oils, and natural cosmetics.",
+    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80",
+    priceRange: "₹200 – ₹2,000",
+    location: { lat: 8.7360, lng: 76.7160 },
+    address: "North Cliff, Varkala",
+    tags: ["Ayurveda", "Herbal", "Oils", "Wellness"],
+  },
+  {
     id: "beach-bohemian",
     name: "Beach Bohemian",
     category: "beachwear",
-    description: "Colorful beachwear, harem pants, bohemian dresses, and accessories.",
+    description: "Colorful beachwear, harem pants, bohemian dresses, and accessories perfect for the cliff vibe.",
     image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=800&q=80",
     priceRange: "₹300 – ₹2,500",
     location: { lat: 8.7370, lng: 76.7150 },
@@ -735,153 +735,160 @@ export const shoppingSpots: ShoppingSpot[] = [
     tags: ["Beachwear", "Bohemian", "Summer Wear", "Trendy"],
   },
   {
-    id: "kairali-ayurveda-shop",
+    id: "cliff-market",
+    name: "Cliff Market – Souvenir Lane",
+    category: "souvenirs",
+    description: "The bustling main souvenir strip along the clifftop promenade offering everything from magnets to t-shirts.",
+    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80",
+    priceRange: "₹100 – ₹2,000",
+    location: { lat: 8.7370, lng: 76.7150 },
+    address: "North Cliff, Varkala",
+    tags: ["Souvenirs", "Magnets", "T-Shirts", "Gifts"],
+  },
+  {
+    id: "dharma-silver",
+    name: "Dharma Silver Jewellery",
+    category: "jewelry",
+    description: "Handcrafted silver jewelry, semi-precious stones, and custom rings made by local artisans.",
+    image: "https://images.unsplash.com/photo-1515562141207-7a8efbc88b74?w=800&q=80",
+    priceRange: "₹500 – ₹10,000",
+    location: { lat: 8.7380, lng: 76.7160 },
+    address: "North Cliff, Varkala",
+    tags: ["Jewelry", "Silver", "Handcrafted", "Gemstones"],
+  },
+  {
+    id: "ganesh-handicrafts",
+    name: "Ganesh Handicrafts & Antiques",
+    category: "antiques",
+    description: "A treasure trove of antique wooden carvings, brass lamps, and traditional Kerala statues.",
+    image: "https://images.unsplash.com/photo-1605333390234-df7675e466cb?w=800&q=80",
+    priceRange: "₹1,000 – ₹15,000",
+    location: { lat: 8.7350, lng: 76.7160 },
+    address: "Temple Road Junction, Varkala",
+    tags: ["Antiques", "Brass", "Wood Carvings", "Decor"],
+  },
+  {
+    id: "himalayan-bowls",
+    name: "Himalayan Singing Bowls",
+    category: "crafts",
+    description: "Authentic Tibetan singing bowls, meditation bells, and sound healing instruments.",
+    image: "https://images.unsplash.com/photo-1616843413587-9e3a37f7bbd8?w=800&q=80",
+    priceRange: "₹800 – ₹5,000",
+    location: { lat: 8.7390, lng: 76.7170 },
+    address: "North Cliff, Varkala",
+    tags: ["Meditation", "Singing Bowls", "Tibetan", "Healing"],
+  },
+  {
+    id: "kairali-ayurveda",
     name: "Kairali Ayurveda Store",
     category: "ayurveda",
-    description: "Pure Ayurvedic oils, herbal soaps, and traditional medicine products.",
+    description: "Premium Ayurvedic oils, herbal soaps, and traditional medicine products from established brands.",
     image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80",
     priceRange: "₹150 – ₹3,000",
     location: { lat: 8.7370, lng: 76.7150 },
+    address: "South Cliff, Varkala",
+    tags: ["Ayurveda", "Oils", "Soaps", "Authentic"],
+  },
+  {
+    id: "kerala-khadi",
+    name: "Kerala Khadi Emporium",
+    category: "clothing",
+    description: "Government-certified store selling pure cotton khadi shirts, kurtas, and sustainable clothing.",
+    image: "https://images.unsplash.com/photo-1583391733958-611591eb3600?w=800&q=80",
+    priceRange: "₹400 – ₹2,500",
+    location: { lat: 8.7320, lng: 76.7180 },
+    address: "Railway Station Road, Varkala",
+    tags: ["Khadi", "Cotton", "Sustainable", "Clothing"],
+  },
+  {
+    id: "mandala-art",
+    name: "Mandala Art Gallery",
+    category: "crafts",
+    description: "Hand-painted mandalas, local artworks, and canvas prints from regional artists.",
+    image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&q=80",
+    priceRange: "₹500 – ₹8,000",
+    location: { lat: 8.7365, lng: 76.7155 },
+    address: "North Cliff, Varkala",
+    tags: ["Art", "Paintings", "Mandala", "Canvas"],
+  },
+  {
+    id: "nomads-wardrobe",
+    name: "Nomad's Wardrobe",
+    category: "clothing",
+    description: "Trendy backpacker clothing, linen pants, and block-printed cotton shirts.",
+    image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&q=80",
+    priceRange: "₹300 – ₹2,000",
+    location: { lat: 8.7385, lng: 76.7165 },
+    address: "Cliff Pathway, Varkala",
+    tags: ["Clothing", "Linen", "Backpacker", "Trendy"],
+  },
+  {
+    id: "ocean-gems",
+    name: "Ocean Gems & Crystals",
+    category: "jewelry",
+    description: "Healing crystals, precious stones, and custom-made macrame jewelry.",
+    image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=800&q=80",
+    priceRange: "₹200 – ₹4,000",
+    location: { lat: 8.7355, lng: 76.7158 },
+    address: "North Cliff, Varkala",
+    tags: ["Crystals", "Gems", "Macrame", "Healing"],
+  },
+  {
+    id: "pure-linen",
+    name: "Pure Linen Varkala",
+    category: "clothing",
+    description: "High-quality pure linen garments, perfect for the tropical Kerala climate.",
+    image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=800&q=80",
+    priceRange: "₹800 – ₹3,500",
+    location: { lat: 8.7340, lng: 76.7150 },
+    address: "Beach Road, Varkala",
+    tags: ["Linen", "Premium", "Clothing", "Summer"],
+  },
+  {
+    id: "spice-village",
+    name: "Spice Village Store",
+    category: "spices",
+    description: "Freshly sourced Kerala spices including cardamom, black pepper, cinnamon, and vanilla.",
+    image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=80",
+    priceRange: "₹100 – ₹1,500",
+    location: { lat: 8.7368, lng: 76.7162 },
     address: "Temple Junction, Varkala",
-    tags: ["Ayurveda", "Herbal", "Oil", "Natural"],
+    tags: ["Spices", "Kerala", "Fresh", "Gifts"],
+  },
+  {
+    id: "temple-handicrafts",
+    name: "Temple Road Handicrafts",
+    category: "crafts",
+    description: "Locally made coir products, bamboo crafts, and coconut shell souvenirs.",
+    image: "https://images.unsplash.com/photo-1531685250784-af587016e6ba?w=800&q=80",
+    priceRange: "₹50 – ₹1,000",
+    location: { lat: 8.7375, lng: 76.7170 },
+    address: "Janardanaswamy Temple Road, Varkala",
+    tags: ["Crafts", "Bamboo", "Coir", "Local"],
   },
   {
     id: "tibetan-market",
     name: "Tibetan Market",
-    category: "crafts",
-    description: "Authentic Tibetan singing bowls, vintage jewelry, and unique Buddhist antiques.",
-    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80",
-    priceRange: "₹500 – ₹10,000",
-    location: { lat: 8.7370, lng: 76.7150 },
-    address: "North Cliff, Varkala",
-    tags: ["Antiques", "Jewelry", "Singing Bowls", "Tibetan"],
-  },
-  {
-    id: "temple-road-handicrafts",
-    name: "Temple Road Handicrafts",
-    category: "handmade",
-    description: "Exquisite rosewood and sandalwood carvings, brass lamps, and traditional Kerala antiques.",
-    image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=80",
-    priceRange: "₹1,000 – ₹25,000",
-    location: { lat: 8.7370, lng: 76.7150 },
-    address: "Temple Junction, Varkala",
-    tags: ["Antiques", "Wood Carving", "Brass", "Premium"],
-  },
-  {
-    id: "varkala-spice-market",
-    name: "Varkala Spice Emporium",
     category: "souvenirs",
-    description: "Freshly harvested cardamom, black pepper, cinnamon, vanilla, and pure Kerala tea/coffee.",
-    image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=80",
-    priceRange: "₹200 – ₹2,000",
-    location: { lat: 8.7370, lng: 76.7150 },
-    address: "Beach Road, Varkala",
-    tags: ["Spices", "Tea", "Coffee", "Authentic"],
+    description: "Authentic Tibetan artifacts, prayer flags, incense, and clothing brought by Tibetan settlers.",
+    image: "https://images.unsplash.com/photo-1525126868853-27ea2aab24ea?w=800&q=80",
+    priceRange: "₹50 – ₹3,000",
+    location: { lat: 8.7395, lng: 76.7165 },
+    address: "North Cliff Edge, Varkala",
+    tags: ["Tibetan", "Incense", "Artifacts", "Clothing"],
   },
   {
-    id: "papaya-boutique",
-    name: "Papaya Resort Wear Boutique",
+    id: "varkala-flea",
+    name: "Varkala Helipad Flea Market",
     category: "clothing",
-    description: "High-end resort wear, flowy dresses, linen shirts, and custom-tailored beach outfits.",
-    image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&q=80",
-    priceRange: "₹1,500 – ₹8,000",
-    location: { lat: 8.7370, lng: 76.7150 },
-    address: "North Cliff, Varkala",
-    tags: ["Dresses", "Luxury", "Resort Wear", "Linen"],
-  },
-  {
-    id: "silver-lining",
-    name: "The Silver Lining",
-    category: "jewelry",
-    description: "Handcrafted sterling silver jewelry, semi-precious stones, and bohemian rings.",
-    image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80",
-    priceRange: "₹500 – ₹5,000",
-    location: { lat: 8.7370, lng: 76.7150 },
-    address: "Cliff Promenade, Varkala",
-    tags: ["Silver", "Jewelry", "Rings", "Bohemian"],
-  },
-  {
-    id: "kerala-khadi",
-    name: "Kerala Khadi Gramodyog",
-    category: "clothing",
-    description: "Government-certified pure cotton and khadi dresses, kurtas, and natural fabrics.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-    priceRange: "₹400 – ₹3,000",
-    location: { lat: 8.7370, lng: 76.7150 },
-    address: "Temple Road, Varkala",
-    tags: ["Dresses", "Cotton", "Authentic", "Khadi"],
+    description: "A lively evening market offering the best bargains on clothes, sunglasses, and trinkets.",
+    image: "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=800&q=80",
+    priceRange: "₹100 – ₹1,000",
+    location: { lat: 8.7330, lng: 76.7140 },
+    address: "Helipad Area, Varkala",
+    tags: ["Flea Market", "Bargains", "Evening", "Trinkets"],
   }
 ];
-
-// === ITINERARY DATA ===
-export interface ItineraryDay {
-  day: number;
-  title: string;
-  activities: {
-    time: string;
-    activity: string;
-    place: string;
-    cost: string;
-    tip: string;
-  }[];
-}
-
-export interface ItineraryPlan {
-  type: string;
-  days: number;
-  totalBudget: string;
-  itinerary: ItineraryDay[];
-}
-
-export const getItinerary = (days: number, tripType: string, budget: string): ItineraryPlan => {
-  const isLuxury = budget === "luxury" || tripType === "luxury";
-  const isBudget = budget === "budget" || tripType === "backpacker";
-
-  const commonDay1: ItineraryDay = {
-    day: 1,
-    title: "Arrival & Cliff Discovery",
-    activities: [
-      { time: "2:00 PM", activity: "Check in to your hotel", place: isLuxury ? "The Gateway Hotel" : isBudget ? "Varkala Backpackers Inn" : "Sea Breeze Beach Resort", cost: isLuxury ? "₹8,500" : isBudget ? "₹350" : "₹1,800", tip: "Book cliff-facing rooms for the best views" },
-      { time: "4:00 PM", activity: "First walk along the iconic cliff promenade", place: "North Cliff", cost: "Free", tip: "Head north for fewer crowds" },
-      { time: "6:00 PM", activity: "Watch the legendary Varkala sunset", place: "Helipad Sunset Point", cost: "Free", tip: "Arrive 20 min early for the best spot" },
-      { time: "8:00 PM", activity: "Dinner with sea views", place: isLuxury ? "Café del Mar" : "Sea Rock Beach Restaurant", cost: isLuxury ? "₹2,000+" : "₹600–₹900", tip: "Try the grilled prawns or fish moilee" },
-    ],
-  };
-
-  const day2: ItineraryDay = {
-    day: 2,
-    title: "Temples, Beaches & Adventure",
-    activities: [
-      { time: "6:30 AM", activity: "Sunrise at the beach + morning dip", place: "Papanasam Beach", cost: "Free", tip: "The sea is calmest at dawn" },
-      { time: "8:00 AM", activity: "Breakfast", place: "Coffee Temple", cost: "₹200–₹400", tip: "Try banana pancakes and filter coffee" },
-      { time: "10:00 AM", activity: "Visit the ancient Janardanaswamy Temple", place: "Janardanaswamy Temple", cost: "Free", tip: "Dress modestly, no shorts" },
-      { time: "12:00 PM", activity: "Authentic Kerala lunch on banana leaf", place: "Sreepadmam Restaurant", cost: "₹120–₹180", tip: "The fish curry rice is legendary" },
-      { time: "2:00 PM", activity: tripType === "adventure" ? "Paragliding off the cliff!" : "Surfing lesson or kayaking", place: "North Cliff / Beach", cost: "₹1,500–₹2,500", tip: "Book surf lessons in advance" },
-      { time: "6:00 PM", activity: "Sunset clifftop walk + shopping", place: "Cliff Market", cost: "₹200–₹1,000", tip: "Bargain for the best prices" },
-    ],
-  };
-
-  const day3: ItineraryDay = {
-    day: 3,
-    title: "Hidden Gems & Backwaters",
-    activities: [
-      { time: "7:00 AM", activity: "Explore the secret Odayam Beach", place: "Odayam Beach", cost: "Free", tip: "Almost no tourists here – bring your camera" },
-      { time: "10:00 AM", activity: "Kappil Lake boat ride through mangroves", place: "Kappil Lake", cost: "₹150–₹500", tip: "Spot migratory birds in winter" },
-      { time: "1:00 PM", activity: "Kappil Beach – sea meets backwaters", place: "Kappil Beach", cost: "Free", tip: "Walk the narrow strip between sea and lake" },
-      { time: "3:00 PM", activity: "Ayurveda massage session", place: "Local Ayurveda Center", cost: "₹800–₹2,000", tip: "60-min coconut oil massage is bliss" },
-      { time: "7:00 PM", activity: "Final dinner & farewell to the cliffs", place: "Cliff restaurant of choice", cost: "₹400–₹2,000", tip: "Walk the cliff one last time" },
-    ],
-  };
-
-  const itinerary = days === 1 ? [commonDay1] : days === 2 ? [commonDay1, day2] : [commonDay1, day2, day3];
-
-  return {
-    type: tripType,
-    days,
-    totalBudget: isLuxury ? "₹15,000–₹30,000" : isBudget ? "₹2,000–₹4,000" : "₹5,000–₹12,000",
-    itinerary,
-  };
-};
 
 // === TRANSPORT ROUTES ===
 export interface TransportRoute {
