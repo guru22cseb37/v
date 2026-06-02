@@ -303,7 +303,7 @@ export function PhotographySection() {
 
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 260px), 1fr))",
           gap: 24,
         }}>
           {photoSpots.map((spot, i) => (
@@ -459,7 +459,7 @@ export function ShoppingSection() {
 
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 260px), 1fr))",
           gap: 24,
         }}>
           {shoppingSpots.map((spot, i) => (

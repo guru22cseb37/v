@@ -287,7 +287,7 @@ export function AIConciergeSection() {
           </div>
 
           {/* Messages */}
-          <div style={{ height: 420, overflowY: "auto", padding: "20px" }}>
+          <div style={{ height: 420, overflowY: "auto", padding: "16px" , maxHeight: "60vh" }}>
             <AnimatePresence>
               {messages.map((msg, i) => (
                 <motion.div
@@ -314,7 +314,7 @@ export function AIConciergeSection() {
                   </div>
 
                   {/* Bubble */}
-                  <div style={{ maxWidth: "75%", position: "relative" }}>
+                  <div style={{ maxWidth: "85%", position: "relative" }}>
                     <div style={{
                       padding: "14px 18px",
                       borderRadius: msg.role === "user" ? "18px 18px 4px 18px" : "18px 18px 18px 4px",

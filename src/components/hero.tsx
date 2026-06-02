@@ -94,8 +94,11 @@ export function Navbar() {
 
       {/* CTA */}
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-        <a href="#ai-guide" className="btn-primary" style={{ padding: "10px 20px", fontSize: 13 }}>
+        <a href="#ai-guide" className="btn-primary hidden-mobile" style={{ padding: "10px 20px", fontSize: 13 }}>
           <Sparkles size={14} /> AI Concierge
+        </a>
+        <a href="#ai-guide" className="btn-primary show-mobile" style={{ padding: "8px 14px", fontSize: 12 }}>
+          <Sparkles size={14} /> AI
         </a>
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -336,7 +339,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 1.0 }}
           style={{
             display: "flex",
-            gap: 40,
+            gap: 24,
             justifyContent: "center",
             marginTop: 56,
             flexWrap: "wrap",
