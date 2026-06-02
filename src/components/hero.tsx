@@ -195,6 +195,7 @@ export function HeroSection() {
         alignItems: "center",
         justifyContent: "center",
         overflow: "hidden",
+        paddingTop: 72, // Prevent overlap with fixed navbar
       }}
     >
       {/* Background image */}
@@ -305,6 +306,7 @@ export function HeroSection() {
                 color: "white",
                 fontSize: 16,
                 fontFamily: "var(--font-body)",
+                minWidth: 0, // CRITICAL: allows input to shrink on mobile
               }}
               id="hero-search"
             />
