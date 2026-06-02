@@ -890,6 +890,76 @@ export const shoppingSpots: ShoppingSpot[] = [
   }
 ];
 
+// === ITINERARY DATA ===
+export interface ItineraryDay {
+  day: number;
+  title: string;
+  activities: {
+    time: string;
+    activity: string;
+    place: string;
+    cost: string;
+    tip: string;
+  }[];
+}
+
+export interface ItineraryPlan {
+  type: string;
+  days: number;
+  totalBudget: string;
+  itinerary: ItineraryDay[];
+}
+
+export const getItinerary = (days: number, tripType: string, budget: string): ItineraryPlan => {
+  const isLuxury = budget === "luxury" || tripType === "luxury";
+  const isBudget = budget === "budget" || tripType === "backpacker";
+
+  const commonDay1: ItineraryDay = {
+    day: 1,
+    title: "Arrival & Cliff Discovery",
+    activities: [
+      { time: "2:00 PM", activity: "Check in to your hotel", place: isLuxury ? "The Gateway Hotel" : isBudget ? "Varkala Backpackers Inn" : "Sea Breeze Beach Resort", cost: isLuxury ? "₹8,500" : isBudget ? "₹350" : "₹1,800", tip: "Book cliff-facing rooms for the best views" },
+      { time: "4:00 PM", activity: "First walk along the iconic cliff promenade", place: "North Cliff", cost: "Free", tip: "Head north for fewer crowds" },
+      { time: "6:00 PM", activity: "Watch the legendary Varkala sunset", place: "Helipad Sunset Point", cost: "Free", tip: "Arrive 20 min early for the best spot" },
+      { time: "8:00 PM", activity: "Dinner with sea views", place: isLuxury ? "Café del Mar" : "Sea Rock Beach Restaurant", cost: isLuxury ? "₹2,000+" : "₹600–₹900", tip: "Try the grilled prawns or fish moilee" },
+    ],
+  };
+
+  const day2: ItineraryDay = {
+    day: 2,
+    title: "Temples, Beaches & Adventure",
+    activities: [
+      { time: "6:30 AM", activity: "Sunrise at the beach + morning dip", place: "Papanasam Beach", cost: "Free", tip: "The sea is calmest at dawn" },
+      { time: "8:00 AM", activity: "Breakfast", place: "Coffee Temple", cost: "₹200–₹400", tip: "Try banana pancakes and filter coffee" },
+      { time: "10:00 AM", activity: "Visit the ancient Janardanaswamy Temple", place: "Janardanaswamy Temple", cost: "Free", tip: "Dress modestly, no shorts" },
+      { time: "12:00 PM", activity: "Authentic Kerala lunch on banana leaf", place: "Sreepadmam Restaurant", cost: "₹120–₹180", tip: "The fish curry rice is legendary" },
+      { time: "2:00 PM", activity: tripType === "adventure" ? "Paragliding off the cliff!" : "Surfing lesson or kayaking", place: "North Cliff / Beach", cost: "₹1,500–₹2,500", tip: "Book surf lessons in advance" },
+      { time: "6:00 PM", activity: "Sunset clifftop walk + shopping", place: "Cliff Market", cost: "₹200–₹1,000", tip: "Bargain for the best prices" },
+    ],
+  };
+
+  const day3: ItineraryDay = {
+    day: 3,
+    title: "Hidden Gems & Backwaters",
+    activities: [
+      { time: "7:00 AM", activity: "Explore the secret Odayam Beach", place: "Odayam Beach", cost: "Free", tip: "Almost no tourists here – bring your camera" },
+      { time: "10:00 AM", activity: "Kappil Lake boat ride through mangroves", place: "Kappil Lake", cost: "₹150–₹500", tip: "Spot migratory birds in winter" },
+      { time: "1:00 PM", activity: "Kappil Beach – sea meets backwaters", place: "Kappil Beach", cost: "Free", tip: "Walk the narrow strip between sea and lake" },
+      { time: "3:00 PM", activity: "Ayurveda massage session", place: "Local Ayurveda Center", cost: "₹800–₹2,000", tip: "60-min coconut oil massage is bliss" },
+      { time: "7:00 PM", activity: "Final dinner & farewell to the cliffs", place: "Cliff restaurant of choice", cost: "₹400–₹2,000", tip: "Walk the cliff one last time" },
+    ],
+  };
+
+  const itinerary = days === 1 ? [commonDay1] : days === 2 ? [commonDay1, day2] : [commonDay1, day2, day3];
+
+  return {
+    type: tripType,
+    days,
+    totalBudget: isLuxury ? "₹15,000–₹30,000" : isBudget ? "₹2,000–₹4,000" : "₹5,000–₹12,000",
+    itinerary,
+  };
+};
+
 // === TRANSPORT ROUTES ===
 export interface TransportRoute {
   from: string;
