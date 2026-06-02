@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Mail, Share2, Rss, Heart, Globe, Phone } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -23,12 +24,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-              <div style={{
-                width: 38, height: 38, borderRadius: 10,
-                background: "linear-gradient(135deg, #2d7dd2, #14a085)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: 18,
-              }}>🌊</div>
+              <Image src="/logo.png" alt="VarkalaVerse Logo" width={38} height={38} style={{ borderRadius: 10 }} />
               <span style={{
                 fontFamily: "var(--font-display)",
                 fontSize: 22,
